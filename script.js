@@ -21,7 +21,7 @@ document.getElementById('copyright-year').textContent = new Date().getFullYear()
 
 function updateNavActive() {
     const navLinks = document.querySelectorAll('nav ul li a');
-    const path = /ccc.github.io/index.html
+    const path = ./index.html
     
     // 提取文件名
     let currentPage = path.split('/').pop();
@@ -92,3 +92,4 @@ function setupHomePage() {
         });
     }
 }
+
