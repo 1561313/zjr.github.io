@@ -21,7 +21,7 @@ document.getElementById('copyright-year').textContent = new Date().getFullYear()
 
 function updateNavActive() {
     const navLinks = document.querySelectorAll('nav ul li a');
-    const path = ./index.html
+    const path = window.location.pathname;
     
     // 提取文件名
     let currentPage = path.split('/').pop();
@@ -92,4 +92,5 @@ function setupHomePage() {
         });
     }
 }
+
 
