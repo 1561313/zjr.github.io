@@ -1,107 +1,268 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>我的网站 - 我们的服务</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-</head>
-<body>
-    <header>
-        <h1>我们的服务</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于</a></li>
-            <li><a href="services.html" class="active">服务</a></li>
-            <li><a href="contact.html">联系</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section class="page-content">
-            <h2>我们提供的专业服务</h2>
-            
-            <div class="service-cards">
-                <article class="service">
-                    <h3>网站开发</h3>
-                    <p>从简单的静态网站到复杂的企业级应用，我们提供全方位的网站开发服务。</p>
-                    <ul>
-                        <li>响应式设计</li>
-                        <li>前端框架开发</li>
-                        <li>性能优化</li>
-                    </ul>
-                </article>
-                
-                <article class="service">
-                    <h3>移动应用</h3>
-                    <p>开发跨平台的移动应用程序，覆盖iOS和Android平台。</p>
-                    <ul>
-                        <li>React Native开发</li>
-                        <li>原生应用开发</li>
-                        <li>PWA应用</li>
-                    </ul>
-                </article>
-                
-                <article class="service">
-                    <h3>UI/UX设计</h3>
-                    <p>创造美观且用户友好的界面设计，提升用户体验。</p>
-                    <ul>
-                        <li>用户调研</li>
-                        <li>原型设计</li>
-                        <li>交互设计</li>
-                    </ul>
-                </article>
-            </div>
-            
-            <div class="pricing">
-                <h3>服务价格</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>服务类型</th>
-                            <th>基础版</th>
-                            <th>专业版</th>
-                            <th>企业版</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>网站开发</td>
-                            <td>¥5,000起</td>
-                            <td>¥15,000起</td>
-                            <td>¥50,000起</td>
-                        </tr>
-                        <tr>
-                            <td>移动应用</td>
-                            <td>¥10,000起</td>
-                            <td>¥30,000起</td>
-                            <td>¥100,000起</td>
-                        </tr>
-                        <tr>
-                            <td>UI/UX设计</td>
-                            <td>¥3,000起</td>
-                            <td>¥8,000起</td>
-                            <td>¥20,000起</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 我的网站. 保留所有权利.</p>
-    </footer>
-    
-    <script src="./script.js"></script>
-</body>
+* {/*通配符选择器重置所有元素的默认边距和内边距,消除浏览器默认样式差异*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*让元素宽度包含padding和border*/
+}
 
-</html>
+body {/*设置文档基础样式*/
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;/*设置行高为字体大小的1.6倍，改善文本可读性*/
+    color: #333;
+    background-color: #f5f5f5;
+}
 
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+nav {
+    background-color: #34495e;
+}
+
+nav ul {
+    display: flex;/* 启用弹性盒子布局 */
+    list-style: none;/* 移除列表符号 */
+    justify-content: center;/* 水平居中 */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;/* 移除下划线 */
+    padding: 1rem 2rem;/* 增加点击区域 */
+    display: block;/* 使整个区域可点击 */
+}
+
+nav ul li a:hover {/* 悬停效果 */
+    background-color: #2c3e50;
+}
+
+nav ul li a.active {/* 当前页指示器 */
+    background-color: #1abc9c;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;/* 水平居中 */
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;/* 圆角 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);/* 阴影 */
+}
+
+button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    cursor: pointer;/* 手型指针 */
+    font-size: 1rem;
+    transition: background-color 0.3s;/* 颜色过渡动画 */
+}
+
+button:hover {/* 悬停深色 */
+    background-color: #16a085;
+}
+
+#messageBox {
+    margin-top: 1rem;
+    padding: 1rem;
+    min-height: 20px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);/* 悬停上浮效果 */
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* 页面内容样式 */
+.page-content {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+/* 团队成员样式 */
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.member {
+    text-align: center;
+}
+
+.member img {
+    border-radius: 50%;/* 圆形头像 */
+    margin-bottom: 1rem;
+}
+
+/* 时间线样式 视觉隐喻：用左侧轴线和圆点模拟时间线*/
+.timeline {
+    list-style: none;
+    padding-left: 1rem;
+    border-left: 3px solid #1abc9c;/* 左侧轴线 */
+}
+
+.timeline li {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -0.5rem;
+    top: 0.5rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    /* 圆形标记点 */
+    background-color: #1abc9c;
+    border-radius: 50%;
+}
+
+/* 服务卡片样式 */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.service {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-top: 4px solid #1abc9c;
+}
+
+.service ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+/* 价格表格样式 */
+.pricing {
+    margin: 3rem 0;
+    overflow-x: auto;
+}
+
+.pricing table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.pricing th, .pricing td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.pricing th {
+    background-color: #34495e;
+    color: white;
+}
+
+.pricing tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* 联系页面样式 */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.contact-info address p {
+    margin-bottom: 1rem;
+}
+
+
+.contact-form {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.map {
+    margin-top: 3rem;
+}
+
+.map-placeholder {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* 响应式设计 移动适配：小屏幕下切换为单列布局，优化触控操作体验*/
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;/* 单列布局 */
+    }
+    
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+}
