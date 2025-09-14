@@ -1,107 +1,483 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>我的网站 - 我们的服务</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-</head>
-<body>
-    <header>
-        <h1>我们的服务</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于</a></li>
-            <li><a href="services.html" class="active">服务</a></li>
-            <li><a href="contact.html">联系</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section class="page-content">
-            <h2>我们提供的专业服务</h2>
-            
-            <div class="service-cards">
-                <article class="service">
-                    <h3>网站开发</h3>
-                    <p>从简单的静态网站到复杂的企业级应用，我们提供全方位的网站开发服务。</p>
-                    <ul>
-                        <li>响应式设计</li>
-                        <li>前端框架开发</li>
-                        <li>性能优化</li>
-                    </ul>
-                </article>
-                
-                <article class="service">
-                    <h3>移动应用</h3>
-                    <p>开发跨平台的移动应用程序，覆盖iOS和Android平台。</p>
-                    <ul>
-                        <li>React Native开发</li>
-                        <li>原生应用开发</li>
-                        <li>PWA应用</li>
-                    </ul>
-                </article>
-                
-                <article class="service">
-                    <h3>UI/UX设计</h3>
-                    <p>创造美观且用户友好的界面设计，提升用户体验。</p>
-                    <ul>
-                        <li>用户调研</li>
-                        <li>原型设计</li>
-                        <li>交互设计</li>
-                    </ul>
-                </article>
-            </div>
-            
-            <div class="pricing">
-                <h3>服务价格</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>服务类型</th>
-                            <th>基础版</th>
-                            <th>专业版</th>
-                            <th>企业版</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>网站开发</td>
-                            <td>¥5,000起</td>
-                            <td>¥15,000起</td>
-                            <td>¥50,000起</td>
-                        </tr>
-                        <tr>
-                            <td>移动应用</td>
-                            <td>¥10,000起</td>
-                            <td>¥30,000起</td>
-                            <td>¥100,000起</td>
-                        </tr>
-                        <tr>
-                            <td>UI/UX设计</td>
-                            <td>¥3,000起</td>
-                            <td>¥8,000起</td>
-                            <td>¥20,000起</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 我的网站. 保留所有权利.</p>
-    </footer>
-    
-    <script src="./script.js"></script>
-</body>
-
-</html>
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ :root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --success-color: #2ecc71;
+    --text-color: #333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+ body {
+    background-color: #f5f7fa;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+ /* 头部样式 */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+ .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+ .logo i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+ /* 导航菜单 */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+ nav li {
+    margin-left: 1.5rem;
+}
+ nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+ nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+ .auth-buttons {
+    display: flex;
+    align-items: center;
+}
+ .btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    margin-left: 0.8rem;
+}
+ .btn-login {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+ .btn-login:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+ .btn-signup {
+    background-color: var(--accent-color);
+    color: white;
+}
+ .btn-signup:hover {
+    background-color: #c0392b;
+}
+ /* 汉堡菜单 */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+ /* 英雄区域 */
+.hero {
+    padding: 4rem 1rem;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3') no-repeat center center/cover;
+    color: white;
+    position: relative;
+}
+ .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+ .hero-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+ .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+ .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+ /* 内容区域 */
+.section-title {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+ .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+ .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+ .feature-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+ .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+ .feature-img {
+    height: 200px;
+    overflow: hidden;
+}
+ .feature-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+ .feature-card:hover .feature-img img {
+    transform: scale(1.05);
+}
+ .feature-content {
+    padding: 1.5rem;
+}
+ .feature-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+ /* 关于我们部分 */
+.about-section {
+    padding: 3rem 0;
+    background-color: white;
+}
+ .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+ .about-text h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+ .about-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+ .about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+ .team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+ .team-member {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+ .team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+ /* 联系我们部分 */
+.contact-section {
+    padding: 3rem 0;
+    background-color: var(--light-color);
+}
+ .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+ .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+ .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+ .contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+ .contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+ .form-group {
+    margin-bottom: 1.5rem;
+}
+ .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+ .form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+ .form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+ .form-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+ .form-btn:hover {
+    background-color: #2980b9;
+}
+ /* 视频部分 */
+.video-section {
+    background-color: var(--secondary-color);
+    padding: 3rem 0;
+    color: white;
+    text-align: center;
+}
+ .video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 宽高比 */
+}
+ .video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a2530;
+    border-radius: 8px;
+    color: white;
+}
+ .video-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+ .video-loading {
+    display: none;
+}
+ .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: none;
+}
+ .video-error {
+    display: none;
+    color: #ff6b6b;
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+}
+ .video-source-selector {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+ .source-btn {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+ .source-btn:hover, .source-btn.active {
+    background-color: var(--primary-color);
+}
+ /* 登录模态框 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+ .modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+ .close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+}
+ /* 页脚 */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+ .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+ .footer-section h3 {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+ .footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+ .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+ /* 响应式设计 */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+     nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+     nav ul.active {
+        display: flex;
+    }
+     nav li {
+        margin: 0;
+        text-align: center;
+    }
+     nav a {
+        display: block;
+        padding: 1rem;
+    }
+     .hero h1 {
+        font-size: 2rem;
+    }
+     .hero p {
+        font-size: 1rem;
+    }
+     .video-source-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+     .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
